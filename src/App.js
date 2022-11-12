@@ -134,12 +134,20 @@ function copyEmbed(){
             >
               Farcaster
             </a>{" "}
-            cast. Updates every 30 minutes.
+            cast. 
           </p>
           <div className="Button-group">
             <input type="text" placeholder="Paste cast link" value={castLink} onChange={(event) => (setCastLink(event.target.value)) }/>
             <button className="button" onClick={makeEmbed}>Make embed</button>
           </div>
+          <p>Powered by <a
+              className="purple"
+              href="https://searchcaster.xyz/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              searchcaster
+            </a>. Updates every 30 mins. </p>
         </div>
         <div className="Embed-block" ref={embedRef} style={{ display: `${embedVisible ? 'block': 'none'}` }}>
           <p> Here's your embed code. Paste it into the html section of your site.</p>
