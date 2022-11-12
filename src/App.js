@@ -1,7 +1,14 @@
 import "./App.css";
 import {useEffect, useRef, useState} from 'react';
+import DOMPurify from 'dompurify'
+import toast, { Toaster } from 'react-hot-toast';
+
+// Users paste a cast link from far caster and they get an embed of the cast
+// Two divs to this page: Input-block and Embed-block
+// Users enter link in Input-block and retrieve embed from Embed-block
 
 function App() {
+  // Get Cast
   const dummyCastLink = "farcaster://casts/0x1a20b19094e257fb1536fe7f3a4785fe9e603a8e7159fccee1ab80760df6fdac/0x1a20b19094e257fb1536fe7f3a4785fe9e603a8e7159fccee1ab80760df6fdac"
   const dummyCast = {
     body: {
@@ -56,7 +63,8 @@ function App() {
       openGraph: [],
     },
   };
-  const dummyCode = `<div>somecode here</div>`;
+
+  // Get Time in good format
   const humanizeDuration = require("humanize-duration");
   const shortEnglishHumanizer = humanizeDuration.humanizer({
     language: "shortEn",
@@ -73,14 +81,16 @@ function App() {
       },
     },
   });
-  
   const dummyTime = shortEnglishHumanizer(Date.now() - dummyCast.body.publishedAt, { largest: 1 }).replace(/\s/g, '');
 
+  // Embed block variables
   const embedRef = useRef(null);
   const [embedVisible, setEmbedVisible] = useState(false)
+
   // make embed
   function makeEmbed(){
     setEmbedVisible(true);
+    embedRef.current?.scrollIntoView({behavior: 'smooth'});
   }
   // scroll to made embed
   useEffect(()=>{
@@ -88,8 +98,40 @@ function App() {
       embedRef.current?.scrollIntoView({behavior: 'smooth'});
     }
   },[embedVisible])
+
+  const embeddedCastCode = `<div class="embedded_cast">
+  <img class="embedded_cast__avatar" src=${dummyCast.meta.avatar} alt='avatar'/>
+  <div class="embedded_cast__text" >
+  <div class="embedded_cast__top">
+    <div class="embedded_cast__h1">
+      ${dummyCast.meta.displayName}
+    </div>
+    <div class="embedded_cast__h2">
+      ${" "}
+      @${dummyCast.body.username} &bull; ${dummyTime}
+    </div>
+  </div>
+  <div class="embedded_cast__p">
+  ${dummyCast.body.data.text} 
+  </div> 
+    <a class="embedded_cast__link"
+      href=${dummyCastLink}
+      target="_blank"
+      rel="noopener noreferrer" >
+      Open in Farcaster
+    </a>
+  </div>
+</div>`.replace(/(\r\n|\n|\r)/gm, "");
+
+// Copy Embed code
+function copyEmbed(){
+  navigator.clipboard.writeText(embeddedCastCode)
+  toast.success("Code copied!")
+}
+
   return (
     <div className="App">
+      <div><Toaster/></div>
       <div className="App-content">
         <h1>
           {" "}
@@ -114,36 +156,14 @@ function App() {
           </div>
         </div>
         <div className="Embed-block" ref={embedRef} style={{ display: `${embedVisible ? 'block': 'none'}` }}>
-          <p> Here's your embed code</p>
+          <p> Here's your embed code. Paste it into the html section of your site.</p>
           <div className="Center-div">
-            <div className="Button-group">
-              <div className="Code-box">{dummyCode}</div>
+            <div className="Button-group" onClick={copyEmbed}>
+              <button className="Code-box">{embeddedCastCode}</button>
               <button className="button">Copy code</button>
             </div>
           </div>
-          <div className="embedded_cast">
-            <img className="embedded_cast__avatar" src={dummyCast.meta.avatar} alt='avatar'/>
-            <div className="embedded_cast__text" >
-            <div className="embedded_cast__top">
-              <div className="embedded_cast__h1">
-                {dummyCast.meta.displayName}
-              </div>
-              <div className="embedded_cast__h2">
-                {" "}
-                @{dummyCast.body.username} &bull; {dummyTime}
-              </div>
-            </div>
-            <div className="embedded_cast__p">
-            {dummyCast.body.data.text} 
-            </div> 
-              <a className="embedded_cast__link"
-                href={dummyCastLink}
-                target="_blank"
-                rel="noopener noreferrer" >
-                Open in Farcaster
-              </a>
-            </div>
-          </div>
+          <div dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(embeddedCastCode)}} />
         </div>
       </div>
     </div>
