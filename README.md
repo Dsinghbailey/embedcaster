@@ -9,3 +9,6 @@ Powered by [the searchcaster api](https://searchcaster.xyz/docs).
 In root folder run
 `npm install`
 `npm start`
+
+
+PRs welcome
