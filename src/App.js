@@ -110,7 +110,8 @@ Open in Farcaster
       } else {
         tempCast = tempCast + tempCastEnd;
       }
-      setEmbeddedCastCode(tempCast.replace(/(\r\n|\n|\r)/gm, ""));
+      setEmbeddedCastCode(tempCast.replace(/\s\s+/g, ' ').replace(/(\r\n|\n|\r)/gm, ""));
+
     }
   }, [castData, castLink]);
 

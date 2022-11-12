@@ -25,7 +25,6 @@ def searchcaster(merkle_root: str):
             allow_redirects=True,
             timeout=5,
         )
-        print(req.json())
         return req.json()
     except:
         return {}
