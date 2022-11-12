@@ -43,6 +43,14 @@ var styles = `
   font-size: 16px;
   text-decoration: none;
 }
+.embedded_cast__image {
+  display: block;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  max-width: 66%;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
 `
 
 var styleSheet = document.createElement("style")
