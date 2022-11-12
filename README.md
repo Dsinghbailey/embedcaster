@@ -7,8 +7,9 @@ Powered by [the searchcaster api](https://searchcaster.xyz/docs).
 
 # Run locally
 In root folder run
-`npm install`
-`npm start`
+`yarn &&  pip install -r requirements.txt`
+`yarn start && python3 app.py`
+Then visit localhost:3000
 
 
 PRs welcome
