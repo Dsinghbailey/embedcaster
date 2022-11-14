@@ -184,14 +184,15 @@ Open in Farcaster
         >
           <p>
             {" "}
-            Here's your embed code. Paste it into the html section of your site.
+            Here's your embedded cast. Paste it into the html section of your site.
           </p>
           <div className="Center-div">
             <div className="Button-group" onClick={copyEmbed}>
               <button className="Code-box">{embeddedCastCode + scriptRider}</button>
-              <button className="button">Copy code</button>
+              <button className="button">Copy</button>
             </div>
           </div>
+          <p>Preview</p>
           <div dangerouslySetInnerHTML={{ __html: embeddedCastCode }} />
         </div>
       </div>
