@@ -35,6 +35,8 @@ function App() {
   const [castLink, setCastLink] = useState("");
   const [castData, setCastData] = useState(null);
   const [embeddedCastCode, setEmbeddedCastCode] = useState("");
+  // Loading
+  const [isLoading, setIsLoading] = useState(false)
 
   // make embed
   function makeEmbed() {
@@ -43,11 +45,13 @@ function App() {
       toast.error("Cast not found.");
       return;
     }
-    fetch("/searchcaster?merkle_root=" + merkleRoot, {
+    fetch("https://searchcaster.xyz/api/search?merkleRoot=" + merkleRoot, {
       headers: { "Content-Type": "application/json" },
     })
       .then((response) => response.json())
       .then((payload) => {
+        console.log("fetching casts from searchcaster")
+        console.log(payload)
         if (
           payload.casts.filter((cast) => cast.merkleRoot === merkleRoot)
             .length === 0
@@ -111,7 +115,7 @@ Open in Farcaster
         tempCast = tempCast + tempCastEnd;
       }
       setEmbeddedCastCode(tempCast.replace(/\s\s+/g, ' ').replace(/(\r\n|\n|\r)/gm, ""));
-
+      setIsLoading(false)
     }
   }, [castData, castLink]);
 
@@ -160,8 +164,11 @@ Open in Farcaster
               value={castLink}
               onChange={(event) => setCastLink(event.target.value)}
             />
-            <button className="button" onClick={makeEmbed}>
-              Make embed
+            <button className="button" onClick={() => {
+              setIsLoading(true)
+              makeEmbed();
+            }}>
+              {isLoading ? "Loading..." : "Embed cast"}
             </button>
           </div>
           <p>
