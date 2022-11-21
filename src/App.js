@@ -181,7 +181,7 @@ Open in Farcaster
             >
               searchcaster
             </a>
-            . Updates every 30 mins.{" "}
+            . Works on casts older than 30 minutes.{" "}
           </p>
         </div>
         <div
