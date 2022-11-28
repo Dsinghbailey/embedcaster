@@ -2,6 +2,7 @@ import "./App.css";
 import { useEffect, useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import githubLogo from "./githubLogo.png";
+import { UniversalDm } from "nftychat-universe";
 
 // Users paste a cast link from far caster and they get an embed of the cast
 // Two divs to this page: Input-block and Embed-block
@@ -132,6 +133,12 @@ Open in Farcaster
       </div>
       <div className="App-content">
         <div className="App-header">
+        <UniversalDm
+  address="0x57632Ba9A844af0AB7d5cdf98b0056c8d87e3A85"
+  displayText="Contact Developer"
+  theme="dark"
+  popoverDirection="bottom"
+/>
           <a
             href="https://github.com/Dsinghbailey/embedcaster"
             target="_blank"

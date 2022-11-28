@@ -28,14 +28,15 @@
 
 .App-header {
   display: flex;
-  width: 100vw;
-  justify-content: end;
+  width: calc(100vw - 48px);
+  justify-content: right;
+  padding: 24px 12px 0px 24px;
   margin-bottom: 8vh;
 }
 
 .Github-link{
   height: 40px;
-  margin: 24px;
+  margin-left: 12px;
 }
 
 .Button-group {
