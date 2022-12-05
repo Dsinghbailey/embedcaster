@@ -9,7 +9,7 @@
     "dompurify": "^2.4.1",
     "ethers": "^5.7.2",
     "humanize-duration": "^3.27.3",
-    "nftychat-universe": "^1.4.10",
+    "nftychat-universe": "^1.4.11",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.0",
