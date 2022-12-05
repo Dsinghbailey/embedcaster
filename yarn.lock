@@ -7983,6 +7983,20 @@ neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+nftychat-universe@^1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/nftychat-universe/-/nftychat-universe-1.4.10.tgz#d7ac0058b66aa7611dc36df9057b14d02470271b"
+  integrity sha512-rjCXrnIXu/gJx175xGrghRGZQaRdIMAy14TQV28hmhKaiaoJXj8HGrhxPLOwsAzypWc/0Fu5xWurljOM6NuGZA==
+  dependencies:
+    "@babel/core" "^7.19.3"
+    "@emotion/react" "^11.10.4"
+    "@emotion/styled" "^11.10.4"
+    "@iconify/react" "^3.2.2"
+    "@mui/material" "^5.10.7"
+    buffer "^6.0.3"
+    nftychat-universe "^1.4.6"
+    react-hot-toast "^2.3.0"
+
 nftychat-universe@^1.4.6:
   version "1.4.6"
   resolved "https://registry.yarnpkg.com/nftychat-universe/-/nftychat-universe-1.4.6.tgz#f48d613428194af8c31133fce8021849caa3c88a"
@@ -7994,20 +8008,6 @@ nftychat-universe@^1.4.6:
     "@iconify/react" "^3.2.2"
     "@mui/material" "^5.10.7"
     buffer "^6.0.3"
-    react-hot-toast "^2.3.0"
-
-nftychat-universe@^1.4.9:
-  version "1.4.9"
-  resolved "https://registry.yarnpkg.com/nftychat-universe/-/nftychat-universe-1.4.9.tgz#c9aa1ed2e9be617f1b2d525621dec085988755d6"
-  integrity sha512-LovHcrYjzZFHMa8/iLLuW34bfyrbyq3X9hS+7HdHBOZAdyIGgV6LoGvakQcV8cX41YfP1sdoqTDysWjp93ulFw==
-  dependencies:
-    "@babel/core" "^7.19.3"
-    "@emotion/react" "^11.10.4"
-    "@emotion/styled" "^11.10.4"
-    "@iconify/react" "^3.2.2"
-    "@mui/material" "^5.10.7"
-    buffer "^6.0.3"
-    nftychat-universe "^1.4.6"
     react-hot-toast "^2.3.0"
 
 no-case@^3.0.4:
