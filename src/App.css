@@ -70,8 +70,11 @@ input {
 .purple {
   color: #8a63d2;
 }
-
+.Input-block{
+  max-width: 80%;
+}
 .Embed-block{
+  max-width: 80%;
   border-top: rgb(118, 118, 118) dashed 4px;
   margin-top: 24vh;
   padding-top: 4vh;

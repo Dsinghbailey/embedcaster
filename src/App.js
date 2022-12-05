@@ -37,7 +37,7 @@ function App() {
   const [castData, setCastData] = useState(null);
   const [embeddedCastCode, setEmbeddedCastCode] = useState("");
   // Loading
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
 
   // make embed
   function makeEmbed() {
@@ -51,8 +51,8 @@ function App() {
     })
       .then((response) => response.json())
       .then((payload) => {
-        console.log("fetching casts from searchcaster")
-        console.log(payload)
+        console.log("fetching casts from searchcaster");
+        console.log(payload);
         if (
           payload.casts.filter((cast) => cast.merkleRoot === merkleRoot)
             .length === 0
@@ -115,8 +115,10 @@ Open in Farcaster
       } else {
         tempCast = tempCast + tempCastEnd;
       }
-      setEmbeddedCastCode(tempCast.replace(/\s\s+/g, ' ').replace(/(\r\n|\n|\r)/gm, ""));
-      setIsLoading(false)
+      setEmbeddedCastCode(
+        tempCast.replace(/\s\s+/g, " ").replace(/(\r\n|\n|\r)/gm, "")
+      );
+      setIsLoading(false);
     }
   }, [castData, castLink]);
 
@@ -133,12 +135,12 @@ Open in Farcaster
       </div>
       <div className="App-content">
         <div className="App-header">
-        <UniversalDm
-  address="0x57632Ba9A844af0AB7d5cdf98b0056c8d87e3A85"
-  displayText="Contact Developer"
-  theme="dark"
-  popoverDirection="bottom"
-/>
+          <UniversalDm
+            address="0x57632Ba9A844af0AB7d5cdf98b0056c8d87e3A85"
+            displayText="Contact Developer"
+            theme="dark"
+            popoverDirection="bottom"
+          />
           <a
             href="https://github.com/Dsinghbailey/embedcaster"
             target="_blank"
@@ -171,10 +173,13 @@ Open in Farcaster
               value={castLink}
               onChange={(event) => setCastLink(event.target.value)}
             />
-            <button className="button" onClick={() => {
-              setIsLoading(true)
-              makeEmbed();
-            }}>
+            <button
+              className="button"
+              onClick={() => {
+                setIsLoading(true);
+                makeEmbed();
+              }}
+            >
               {isLoading ? "Loading..." : "Embed cast"}
             </button>
           </div>
@@ -198,11 +203,14 @@ Open in Farcaster
         >
           <p>
             {" "}
-            Here's your embedded cast. Paste it into the html section of your site.
+            Here's your embedded cast. Paste it into the html section of your
+            site.
           </p>
           <div className="Center-div">
             <div className="Button-group" onClick={copyEmbed}>
-              <button className="Code-box">{embeddedCastCode + scriptRider}</button>
+              <button className="Code-box">
+                {embeddedCastCode + scriptRider}
+              </button>
               <button className="button">Copy</button>
             </div>
           </div>

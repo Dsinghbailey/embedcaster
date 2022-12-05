@@ -7996,10 +7996,10 @@ nftychat-universe@^1.4.6:
     buffer "^6.0.3"
     react-hot-toast "^2.3.0"
 
-nftychat-universe@^1.4.7:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/nftychat-universe/-/nftychat-universe-1.4.7.tgz#436cc94200e48730c3e2b37896d9472d91a98d40"
-  integrity sha512-udDwV6M0knIb79uB4gJUTA94EKbMaOKlMfCPZyrMNdsYpKkwNYGlhu6QOCIv8a5Tkjgq5rYcM/BiDnI6gmSvjA==
+nftychat-universe@^1.4.9:
+  version "1.4.9"
+  resolved "https://registry.yarnpkg.com/nftychat-universe/-/nftychat-universe-1.4.9.tgz#c9aa1ed2e9be617f1b2d525621dec085988755d6"
+  integrity sha512-LovHcrYjzZFHMa8/iLLuW34bfyrbyq3X9hS+7HdHBOZAdyIGgV6LoGvakQcV8cX41YfP1sdoqTDysWjp93ulFw==
   dependencies:
     "@babel/core" "^7.19.3"
     "@emotion/react" "^11.10.4"
