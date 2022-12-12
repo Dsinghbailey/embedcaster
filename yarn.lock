@@ -7983,10 +7983,10 @@ neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-nftychat-universe@^1.4.11:
-  version "1.4.11"
-  resolved "https://registry.yarnpkg.com/nftychat-universe/-/nftychat-universe-1.4.11.tgz#8475eed52c860018cbf1e2f33bd742d8f11d38bb"
-  integrity sha512-Ep1wNeA+bwphux16nlNkLLD265HnvRjFkETELgacEHC3fruVtGMTo2Hn3zE+Kxi5cev8ajpJYuBq25UEVbfu8A==
+nftychat-universe@^1.4.12:
+  version "1.4.12"
+  resolved "https://registry.yarnpkg.com/nftychat-universe/-/nftychat-universe-1.4.12.tgz#60392a49eb64496240131a4700ae9a646d83e60d"
+  integrity sha512-a/NzmcSK7tVk8rItW/4pp+Um5r9Rc3OTvvErEy2nDpKgvgDXqQ35Lna+chzsmmzeLDcOY6WmhhyvH7b0vTUQSw==
   dependencies:
     "@babel/core" "^7.19.3"
     "@emotion/react" "^11.10.4"
