@@ -15,6 +15,8 @@ var styles = `
   width: 56px;
   height: 56px;
   padding: 0px 8px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 .embedded_cast__top{
   display: flex;
