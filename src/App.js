@@ -164,7 +164,7 @@ Open in Farcaster
             >
               Farcaster
             </a>{" "}
-            cast.
+            cast. (Warpcast support coming soon!)
           </p>
           <div className="Button-group">
             <input
