@@ -135,12 +135,6 @@ Open in Farcaster
       </div>
       <div className="App-content">
         <div className="App-header">
-          <UniversalDm
-            address="0x57632Ba9A844af0AB7d5cdf98b0056c8d87e3A85"
-            displayText="Contact Developer"
-            theme="dark"
-            popoverDirection="bottom"
-          />
           <a
             href="https://github.com/Dsinghbailey/embedcaster"
             target="_blank"
